@@ -10,6 +10,7 @@
 
 @implementation RootViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -51,7 +52,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 10;
 }
 
 // Customize the appearance of table view cells.
@@ -111,13 +112,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-    // ...
-    // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-	*/
+   // On select cell in Navigation Controller open View with detailed item info
+    DetailedInfoController *detailInfoController = [[DetailedInfoController alloc] initWithNibName:@"DetailedInfoController" bundle:nil];
+    [self.navigationController pushViewController:detailInfoController animated:YES];
+    [detailInfoController release];
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,47 +10,58 @@
 
 
 @implementation DetailedInfoController
+@synthesize itemImage;
+@synthesize itemTitle;
+@synthesize itemDescription;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+// Custom initialization
     }
     return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
+    [itemImage release];
+    [itemTitle release];
+    [itemDescription release];
+    [itemTitle release];
     [super dealloc];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
+- (void)didReceiveMemoryWarning {
+// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
+
+// Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    itemTitle.editable = NO;
+    itemTitle.scrollEnabled = NO;
+
+    itemDescription.editable = NO;
+    itemDescription.scrollEnabled = YES;
+
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
+    [self setItemImage:nil];
+    [self setItemTitle:nil];
+    [self setItemDescription:nil];
+    [self setItemTitle:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+// Release any retained subviews of the main view.
+// e.g. self.myOutlet = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+// Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
