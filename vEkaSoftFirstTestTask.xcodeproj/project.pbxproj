@@ -16,6 +16,14 @@
 		FA25B3281359772500E6A603 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA25B3261359772500E6A603 /* MainWindow.xib */; };
 		FA25B32B1359772500E6A603 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA25B32A1359772500E6A603 /* RootViewController.m */; };
 		FA25B32E1359772500E6A603 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA25B32C1359772500E6A603 /* RootViewController.xib */; };
+		FA25B33B1359797700E6A603 /* DetailedInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA25B3391359797700E6A603 /* DetailedInfoController.m */; };
+		FA25B33C1359797700E6A603 /* DetailedInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA25B33A1359797700E6A603 /* DetailedInfoController.xib */; };
+		FA25B34C135979AF00E6A603 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FA25B341135979AF00E6A603 /* NSObject+SBJSON.m */; };
+		FA25B34D135979AF00E6A603 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FA25B343135979AF00E6A603 /* NSString+SBJSON.m */; };
+		FA25B34E135979AF00E6A603 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FA25B345135979AF00E6A603 /* SBJSON.m */; };
+		FA25B34F135979AF00E6A603 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FA25B347135979AF00E6A603 /* SBJsonBase.m */; };
+		FA25B350135979AF00E6A603 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA25B349135979AF00E6A603 /* SBJsonParser.m */; };
+		FA25B351135979AF00E6A603 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA25B34B135979AF00E6A603 /* SBJsonWriter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +41,22 @@
 		FA25B3291359772500E6A603 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		FA25B32A1359772500E6A603 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		FA25B32D1359772500E6A603 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		FA25B3381359797700E6A603 /* DetailedInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedInfoController.h; sourceTree = "<group>"; };
+		FA25B3391359797700E6A603 /* DetailedInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedInfoController.m; sourceTree = "<group>"; };
+		FA25B33A1359797700E6A603 /* DetailedInfoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailedInfoController.xib; sourceTree = "<group>"; };
+		FA25B33F135979AF00E6A603 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		FA25B340135979AF00E6A603 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		FA25B341135979AF00E6A603 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		FA25B342135979AF00E6A603 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		FA25B343135979AF00E6A603 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		FA25B344135979AF00E6A603 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		FA25B345135979AF00E6A603 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		FA25B346135979AF00E6A603 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		FA25B347135979AF00E6A603 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		FA25B348135979AF00E6A603 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		FA25B349135979AF00E6A603 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		FA25B34A135979AF00E6A603 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		FA25B34B135979AF00E6A603 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +103,17 @@
 		FA25B31A1359772500E6A603 /* vEkaSoftFirstTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				FA25B33E135979AF00E6A603 /* JSON */,
+				FA25B31B1359772500E6A603 /* Supporting Files */,
 				FA25B3231359772500E6A603 /* vEkaSoftFirstTestTaskAppDelegate.h */,
 				FA25B3241359772500E6A603 /* vEkaSoftFirstTestTaskAppDelegate.m */,
 				FA25B3261359772500E6A603 /* MainWindow.xib */,
 				FA25B3291359772500E6A603 /* RootViewController.h */,
 				FA25B32A1359772500E6A603 /* RootViewController.m */,
 				FA25B32C1359772500E6A603 /* RootViewController.xib */,
-				FA25B31B1359772500E6A603 /* Supporting Files */,
+				FA25B3381359797700E6A603 /* DetailedInfoController.h */,
+				FA25B3391359797700E6A603 /* DetailedInfoController.m */,
+				FA25B33A1359797700E6A603 /* DetailedInfoController.xib */,
 			);
 			path = vEkaSoftFirstTestTask;
 			sourceTree = "<group>";
@@ -99,6 +127,26 @@
 				FA25B3211359772500E6A603 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA25B33E135979AF00E6A603 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				FA25B33F135979AF00E6A603 /* JSON.h */,
+				FA25B340135979AF00E6A603 /* NSObject+SBJSON.h */,
+				FA25B341135979AF00E6A603 /* NSObject+SBJSON.m */,
+				FA25B342135979AF00E6A603 /* NSString+SBJSON.h */,
+				FA25B343135979AF00E6A603 /* NSString+SBJSON.m */,
+				FA25B344135979AF00E6A603 /* SBJSON.h */,
+				FA25B345135979AF00E6A603 /* SBJSON.m */,
+				FA25B346135979AF00E6A603 /* SBJsonBase.h */,
+				FA25B347135979AF00E6A603 /* SBJsonBase.m */,
+				FA25B348135979AF00E6A603 /* SBJsonParser.h */,
+				FA25B349135979AF00E6A603 /* SBJsonParser.m */,
+				FA25B34A135979AF00E6A603 /* SBJsonWriter.h */,
+				FA25B34B135979AF00E6A603 /* SBJsonWriter.m */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +202,7 @@
 				FA25B31F1359772500E6A603 /* InfoPlist.strings in Resources */,
 				FA25B3281359772500E6A603 /* MainWindow.xib in Resources */,
 				FA25B32E1359772500E6A603 /* RootViewController.xib in Resources */,
+				FA25B33C1359797700E6A603 /* DetailedInfoController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +216,13 @@
 				FA25B3221359772500E6A603 /* main.m in Sources */,
 				FA25B3251359772500E6A603 /* vEkaSoftFirstTestTaskAppDelegate.m in Sources */,
 				FA25B32B1359772500E6A603 /* RootViewController.m in Sources */,
+				FA25B33B1359797700E6A603 /* DetailedInfoController.m in Sources */,
+				FA25B34C135979AF00E6A603 /* NSObject+SBJSON.m in Sources */,
+				FA25B34D135979AF00E6A603 /* NSString+SBJSON.m in Sources */,
+				FA25B34E135979AF00E6A603 /* SBJSON.m in Sources */,
+				FA25B34F135979AF00E6A603 /* SBJsonBase.m in Sources */,
+				FA25B350135979AF00E6A603 /* SBJsonParser.m in Sources */,
+				FA25B351135979AF00E6A603 /* SBJsonWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +335,7 @@
 				FA25B3331359772500E6A603 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
