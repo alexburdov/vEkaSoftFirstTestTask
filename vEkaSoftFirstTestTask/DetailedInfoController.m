@@ -13,6 +13,7 @@
 @synthesize itemImage;
 @synthesize itemTitle;
 @synthesize itemDescription;
+@synthesize item;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,6 +29,11 @@
     [itemDescription release];
     [itemTitle release];
     [super dealloc];
+}
+
+-(void)setItem:(ItemModel *)_item{
+    itemTitle.text = _item.itemTitle;
+    itemDescription.text = _item.itemDescription;
 }
 
 - (void)didReceiveMemoryWarning {

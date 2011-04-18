@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "DetailedInfoController.h"
+#import "JsonConnectionController.h"
 
 @interface RootViewController : UITableViewController {
-
+    NSMutableData *responseData;
+    NSMutableArray *items;
+    DetailedInfoController *detail;
 }
-
 
 @end

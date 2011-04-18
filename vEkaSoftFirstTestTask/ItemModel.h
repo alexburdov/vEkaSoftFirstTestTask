@@ -10,12 +10,14 @@
 
 
 @interface ItemModel : NSObject {
+    //   int *itemId;
     UIImage *itemImage;
     NSString *itemImageURL;
     NSString *itemTitle;
     NSString *itemDescriptiom;
 }
 
+//@property int *itemId;
 @property (nonatomic, retain) UIImage *itemImage;
 @property (nonatomic, retain) NSString *itemImageURL;
 @property (nonatomic, retain) NSString *itemTitle;
