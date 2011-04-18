@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "ImageDownloader.h"
 
 @implementation RootViewController
 
@@ -47,22 +48,21 @@
     // Loop through each entry in the dictionary...
 	for (NSDictionary *entity in results)
     {
-          ItemModel *item = [[ItemModel alloc] init];
+        ItemModel *item = [[[ItemModel alloc] init] autorelease];
+        ImageDownloader *imgDownloader = [[[ImageDownloader alloc] init] autorelease];
         
         //        item.itemId = [[entity objectForKey:@"entity_id"] integerValue];
-        item.itemImage = nil;
+        
         item.itemImageURL = [NSString stringWithFormat:@"%@",[[entity objectForKey:@"entity"] objectForKey:@"icon"]];
         item.itemTitle = [NSString stringWithFormat:@"%@",[[entity objectForKey:@"entity"] objectForKey:@"title"]];
         item.itemDescription = [NSString stringWithFormat:@"%@",[[entity objectForKey:@"entity"] objectForKey:@"text"]];
+        [imgDownloader setItem:item];
+        [imgDownloader startDownload];
         NSLog(@"%@",item.itemTitle);
         [items addObject:item];
-        
-        [item release];
-              
 	NSLog(@"%@ ",[[entity objectForKey:@"entity"] objectForKey:@"icon"]);
     }
 	[jsonString release];  
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -102,35 +102,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSLog(@"ITEMS COUNT = %@",[items count]);
-    return 3;//[items count];
+    return 23;//[items count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	// customize the appearance of table view cells
-	//
-	static NSString *CellIdentifier = @"Cell";
-    static NSString *PlaceholderCellIdentifier = @"PlaceholderCell";
-    
-    // add a placeholder cell while waiting on table data
-    int nodeCount = items != nil?[items count]:0;
-	
-	if (nodeCount == 0 && indexPath.row == 0)
-	{
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:PlaceholderCellIdentifier];
-        if (cell == nil)
-		{
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-										   reuseIdentifier:PlaceholderCellIdentifier] autorelease];   
-            cell.detailTextLabel.textAlignment = UITextAlignmentCenter;
-			cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        }
-        
-		cell.detailTextLabel.text = @"Loading…";
-		
-		return cell;
-    }
-	
+ 	static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
 	{
@@ -138,31 +115,10 @@
 									   reuseIdentifier:CellIdentifier] autorelease];
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    
-    // Leave cells empty if there's no data yet
-    if (nodeCount > 0)
-	{
-        // Set up the cell...
         ItemModel *item = [items objectAtIndex:indexPath.row];
-        
 		cell.textLabel.text = item.itemTitle;
         cell.detailTextLabel.text = item.itemDescription;
-		
-        // Only load cached images; defer new downloads until scrolling ends
-        if (!item.itemImage)
-        {
-            if (self.tableView.dragging == NO && self.tableView.decelerating == NO)
-            {
-                //   [self startIconDownload:appRecord forIndexPath:indexPath];
-            }
-            // if a download is deferred or in progress, return a placeholder image
-            cell.imageView.image = [UIImage imageNamed:@"Placeholder.png"];                
-        }
-        else
-        {
-            cell.imageView.image = item.itemImage;
-        }
-    }
+        cell.imageView.image = item.itemImage;
     return cell;
 }
 
@@ -210,11 +166,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   // On select cell in Navigation Controller open View with detailed item info
-   // DetailedInfoController *detailInfoController = [[DetailedInfoController alloc] initWithNibName:@"DetailedInfoController" bundle:nil];
-    [detail setItem:[items objectAtIndex:1]];
+    [detail setItem:[items objectAtIndex:indexPath.row]];
     [self.navigationController pushViewController:detail animated:YES];
-    //   [detailInfoController release];
 }
 
 - (void)didReceiveMemoryWarning

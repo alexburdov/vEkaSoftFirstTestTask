@@ -7,7 +7,7 @@
 //
 
 #import "DetailedInfoController.h"
-
+#import "ImageDownloader.h"
 
 @implementation DetailedInfoController
 @synthesize itemImage;
@@ -34,6 +34,14 @@
 -(void)setItem:(ItemModel *)_item{
     itemTitle.text = _item.itemTitle;
     itemDescription.text = _item.itemDescription;
+    if (_item.itemImage == nil) {
+        
+        itemImage.image =[UIImage imageNamed:@"empty.png"];
+        ImageDownloader *imageDownloader = [[ImageDownloader alloc] init];
+        [imageDownloader setItem:_item];
+    } else {
+        itemImage.image =_item.itemImage; 
+    }
 }
 
 - (void)didReceiveMemoryWarning {
