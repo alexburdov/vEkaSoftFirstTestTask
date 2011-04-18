@@ -11,18 +11,13 @@
 
 
 @interface DetailedInfoController : UIViewController {
-    
     UIImageView *itemImage;
     UITextView *itemTitle;
     UITextView *itemDescription;
-    ItemModel *item;
 }
+
 @property (nonatomic, retain) IBOutlet UIImageView *itemImage;
-
 @property (nonatomic, retain) IBOutlet UITextView *itemTitle;
-
 @property (nonatomic, retain) IBOutlet UITextView *itemDescription;
-
-@property (nonatomic, retain) ItemModel *item;
 
 @end

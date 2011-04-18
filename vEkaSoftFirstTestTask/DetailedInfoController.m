@@ -7,21 +7,12 @@
 //
 
 #import "DetailedInfoController.h"
-#import "ImageDownloader.h"
 
 @implementation DetailedInfoController
 @synthesize itemImage;
 @synthesize itemTitle;
 @synthesize itemDescription;
-@synthesize item;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-// Custom initialization
-    }
-    return self;
-}
 
 - (void)dealloc {
     [itemImage release];
@@ -31,17 +22,14 @@
     [super dealloc];
 }
 
--(void)setItem:(ItemModel *)_item{
-    itemTitle.text = _item.itemTitle;
-    itemDescription.text = _item.itemDescription;
-    if (_item.itemImage == nil) {
-        
-        itemImage.image =[UIImage imageNamed:@"empty.png"];
-        ImageDownloader *imageDownloader = [[ImageDownloader alloc] init];
-        [imageDownloader setItem:_item];
-    } else {
-        itemImage.image =_item.itemImage; 
-    }
+-(void)setItem:(ItemModel *)item{
+    if (item.itemTitle != nil)
+        itemTitle.text = item.itemTitle;
+    if (item.itemDescription)
+        itemDescription.text = item.itemDescription;
+    if (item.itemImage != nil) 
+        itemImage.image = item.itemImage; 
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,10 +46,12 @@
 
     itemTitle.editable = NO;
     itemTitle.scrollEnabled = NO;
-
+    itemTitle.text = @"";
+    
     itemDescription.editable = NO;
     itemDescription.scrollEnabled = YES;
-
+    itemDescription.text = @"";
+    
 }
 
 - (void)viewDidUnload {

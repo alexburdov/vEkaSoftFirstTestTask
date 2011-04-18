@@ -14,14 +14,13 @@
 @synthesize item;
 @synthesize activeDownload;
 @synthesize imageConnection;
+@synthesize delegate;
 
 - (void)dealloc
 {
     [activeDownload release];
-    
     [imageConnection cancel];
     [imageConnection release];
-    
     [super dealloc];
 }
 
@@ -36,14 +35,6 @@
     self.imageConnection = conn;
     [conn release];
 }
-
-- (void)cancelDownload
-{
-    [self.imageConnection cancel];
-    self.imageConnection = nil;
-    self.activeDownload = nil;
-}
-
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
@@ -63,6 +54,7 @@
     self.activeDownload = nil;
     [image release];
     self.imageConnection = nil;
+    [delegate reloadData];
 }
 
 @end
