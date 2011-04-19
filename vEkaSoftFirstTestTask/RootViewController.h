@@ -15,5 +15,4 @@
     NSMutableArray *items;
     DetailedInfoController *detail;
 }
-
 @end

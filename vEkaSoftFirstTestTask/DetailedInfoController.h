@@ -16,8 +16,9 @@
     UITextView *itemDescription;
 }
 
-@property (nonatomic, retain) IBOutlet UIImageView *itemImage;
-@property (nonatomic, retain) IBOutlet UITextView *itemTitle;
-@property (nonatomic, retain) IBOutlet UITextView *itemDescription;
+@property(nonatomic, retain) IBOutlet UIImageView *itemImage;
+@property(nonatomic, retain) IBOutlet UITextView *itemTitle;
+@property(nonatomic, retain) IBOutlet UITextView *itemDescription;
 
+- (void)setItem:(ItemModel *)item;
 @end

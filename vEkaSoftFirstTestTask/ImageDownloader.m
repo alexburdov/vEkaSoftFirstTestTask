@@ -16,39 +16,36 @@
 @synthesize imageConnection;
 @synthesize delegate;
 
-- (void)dealloc
-{
+- (void)dealloc {
     [activeDownload release];
     [imageConnection cancel];
     [imageConnection release];
+    [item release];
+    [delegate release];
     [super dealloc];
 }
 
-- (void)startDownload
-{
+- (void)startDownload {
     self.activeDownload = [NSMutableData data];
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:
-                             [NSURLRequest requestWithURL:
-                              [NSURL URLWithString:[@"http://job.vekasoft.com/tests/" 
-                                                    stringByAppendingString: item.itemImageURL]]] delegate:self];
-  
+    [NSURLRequest requestWithURL:
+    [NSURL URLWithString:[@"http://job.vekasoft.com/tests/"
+            stringByAppendingString:item.itemImageURL]]] delegate:self];
+
     self.imageConnection = conn;
     [conn release];
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     [self.activeDownload appendData:data];
 }
 
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-	self.activeDownload = nil;
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    self.activeDownload = nil;
     self.imageConnection = nil;
 }
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     UIImage *image = [[UIImage alloc] initWithData:self.activeDownload];
     self.item.itemImage = image;
     self.activeDownload = nil;
@@ -56,5 +53,4 @@
     self.imageConnection = nil;
     [delegate reloadData];
 }
-
 @end

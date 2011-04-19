@@ -16,14 +16,13 @@
 @synthesize itemTitle;
 @synthesize itemDescription;
 
--(void) dealloc{
-    // 
+- (void)dealloc {
+//
     [itemImage release];
     [itemImageURL release];
     [itemTitle release];
     [itemDescription release];
-    
+
     [super dealloc];
 }
-
 @end
