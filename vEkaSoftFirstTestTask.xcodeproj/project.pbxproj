@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA23A868135AAE5E00EC006B /* JsonConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA23A867135AAE5E00EC006B /* JsonConnectionController.m */; };
 		FA25B3151359772500E6A603 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA25B3141359772500E6A603 /* UIKit.framework */; };
 		FA25B3171359772500E6A603 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA25B3161359772500E6A603 /* Foundation.framework */; };
 		FA25B3191359772500E6A603 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA25B3181359772500E6A603 /* CoreGraphics.framework */; };
@@ -30,8 +29,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA23A866135AAE5E00EC006B /* JsonConnectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonConnectionController.h; sourceTree = "<group>"; };
-		FA23A867135AAE5E00EC006B /* JsonConnectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonConnectionController.m; sourceTree = "<group>"; };
 		FA25B3101359772400E6A603 /* vEkaSoftFirstTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vEkaSoftFirstTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA25B3141359772500E6A603 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FA25B3161359772500E6A603 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -123,8 +120,6 @@
 				FA25B3391359797700E6A603 /* DetailedInfoController.m */,
 				FA25B35213597F8000E6A603 /* ItemModel.h */,
 				FA25B35313597F8000E6A603 /* ItemModel.m */,
-				FA23A866135AAE5E00EC006B /* JsonConnectionController.h */,
-				FA23A867135AAE5E00EC006B /* JsonConnectionController.m */,
 				FA3ACE8B135C71CB00855C8C /* ImageDownloader.h */,
 				FA3ACE8C135C71CC00855C8C /* ImageDownloader.m */,
 			);
@@ -247,7 +242,6 @@
 				FA25B350135979AF00E6A603 /* SBJsonParser.m in Sources */,
 				FA25B351135979AF00E6A603 /* SBJsonWriter.m in Sources */,
 				FA25B35413597F8000E6A603 /* ItemModel.m in Sources */,
-				FA23A868135AAE5E00EC006B /* JsonConnectionController.m in Sources */,
 				FA3ACE8D135C71CC00855C8C /* ImageDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

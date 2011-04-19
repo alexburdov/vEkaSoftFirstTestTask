@@ -15,8 +15,8 @@
     NSMutableArray *items;
     NSMutableData *responseData;
 }
-+ (id)initWithURLString:(NSString *)urlString;
+- (id)initWithURLString:(NSString *)urlString;
 
-@property (nonatomic, retain) NSMutableArray *items;
+@property(nonatomic, retain) NSMutableArray *items;
 
 @end
